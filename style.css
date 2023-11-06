@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.body {
+    width: 661px;
+    height: 763px;
+    background: #C4C4C4;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+.search {
+    width: 500px;
+    height: 61px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 48px;
+    line-height: normal;
+}
+.search::placeholder {
+    opacity: 0.7;
+}
+.body__listResults {
+    width: 500px;
+    background: #E3E3E3;
+    color: #000;
+    font-family: Roboto;
+    font-size: 30px;
+    line-height: normal;
+    transition: display 1s ease-in 2s;
+}
+.listResults__el:hover{
+    background: #65CDF9;
+}
+.listResults__el {
+    height: 44px;
+    border: 2px solid #000;
+}
+.container {
+    background: #E27BEB;
+}
+.body__containerRepositories {
+    margin-top: 30px;
+    border: 1px solid black;
+    min-height: 300px;
+    width: 500px;
+}
+.container__el {
+    height: 101px;
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: normal;
+}
+.container__el:not(:last-child) {
+    border-bottom: 1px solid #000;
+}
+.container__text {
+    list-style-type: none;
+    padding: 8px 15px;
+}
+.container__btn {
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    border: none;
+    background-color: transparent;
+	width: 42px;
+	height: 38px;
+	cursor: pointer;
+    opacity: 0.5;
+}
+.container__btn:hover {
+		opacity: 1;
+}
+.container__btn::before,
+.container__btn::after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 42px;
+	height: 3px;
+	background: #F00;
+}
+.container__btn::before {
+	transform: rotate(45deg);
+}
+
+.container__btn::after {
+	transform: rotate(-45deg);
+}
+.errorResult {
+    color: red;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+}
+.search__List {
+    display: none;
+}
