@@ -54,7 +54,7 @@ function addResult(e) {
 
 function onChange(e) {
     removeWarningMessage();
-        if (searchFeald.value.trim()) {
+        if (e.target.value.trim()) {
         let url = `https://api.github.com/search/repositories?q=${e.target.value}&per_page=5`; 
             return fetch(url)
             .then(response=>{
@@ -92,8 +92,8 @@ function onChange(e) {
 
 onChange = debounce(onChange, 600);
 
-function emptyField() {
-    if (searchFeald.value.trim() && searchList.firstChild) {
+function emptyField(e) {
+    if (e.target.value.trim() && searchList.firstChild) {
         for (let i=0;i<5;i++) {
             searchList.firstChild.remove();
             run = true;
