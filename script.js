@@ -61,7 +61,7 @@ function onChange(e) {
                 return response.json();   
             })
             .then(result=>{
-                let results = result.items
+                let results = result.items;
                 if(results.length == 0) {
                     let errorResult = document.createElement('option');
                     errorResult.classList.add('errorResult');
@@ -93,7 +93,7 @@ function onChange(e) {
 onChange = debounce(onChange, 600);
 
 function emptyField() {
-    if (searchFeald.value!='' && searchList.firstChild) {
+    if (searchFeald.value.trim() && searchList.firstChild) {
         for (let i=0;i<5;i++) {
             searchList.firstChild.remove();
             run = true;
