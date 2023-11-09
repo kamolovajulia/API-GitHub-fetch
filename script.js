@@ -52,10 +52,10 @@ function addResult(e) {
     searchList.classList.add('search__List');
 }
 
-function onChange() {
+function onChange(e) {
     removeWarningMessage();
-    if (searchFeald.value!=' ' && searchFeald.value!='') {
-        let url = `https://api.github.com/search/repositories?q=${searchFeald.value}&per_page=5`; 
+        if (searchFeald.value.trim()) {
+        let url = `https://api.github.com/search/repositories?q=${e.target.value}&per_page=5`; 
             return fetch(url)
             .then(response=>{
                 return response.json();   
@@ -82,7 +82,6 @@ function onChange() {
                         fragment.appendChild(elResults);
                     });
                     run = false;
-                    console.log(obj);
                     searchList.appendChild(fragment);  
                     searchList.classList.remove('search__List');
                 }
@@ -110,7 +109,7 @@ function removeEl(e) {
     }
 }
 
-searchFeald.addEventListener('keyup', onChange);  
-searchFeald.addEventListener('keyup', emptyField);  
+searchFeald.addEventListener('input', onChange);  
+searchFeald.addEventListener('input', emptyField);  
 searchList.addEventListener('click', addResult);
 container.addEventListener('click', removeEl);
